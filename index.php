@@ -7,8 +7,8 @@ if (strtoupper($_SERVER['REQUEST_METHOD']) == "POST") {
     $usuario = new Usuario();
     $usuario->setNombreUsuario($_POST["usuario"]);
     $usuario->setContrasena($_POST["contrasena"]);
+    $usuario->setRol($_POST["rol"]);
     $controlador = new ControladorUsuario($usuario);
-    
 }
 ?>
 
@@ -42,11 +42,11 @@ if (strtoupper($_SERVER['REQUEST_METHOD']) == "POST") {
                     
                      <div>
                          <label>Soy Cliente</label>
-                         <input type="radio" name="permisos" value="2" />
+                         <input type="radio" name="rol" value="2" />
                      </div>
                     <div>
                         <label> Soy Trabajador</label>
-                        <input type="radio" name= "permisos" value="1"/>
+                        <input type="radio" name= "rol" value="1"/>
                     </div>
                     <div class="text-center" role="group" aria-label="Basic example">
                         <input class="login100-form-btn" type="submit" value="Ingresar" />

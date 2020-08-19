@@ -1,8 +1,8 @@
 <?php
 
-define('__ROOTMODEL__', dirname(dirname(__FILE__)));
-require_once(__ROOTMODEL__ . '/Datos/Conexion.php');
-require_once(__ROOTMODEL__ . '/Entidades/Producto.php');
+define('__ROOTPRODUCT__', dirname(dirname(__FILE__)));
+require_once(__ROOTPRODUCT__ . '/Datos/Conexion.php');
+require_once(__ROOTPRODUCT__ . '/Entidades/Producto.php');
 
 class ModeloProducto {
 

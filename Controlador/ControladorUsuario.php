@@ -10,8 +10,11 @@ class ControladorUsuario {
     
     public function __construct(Usuario $usuario) {
         $this->modeloUsuario= new ModeloUsuario();
-        if($this->login($usuario)){     
-            header("Location: http://localhost/CRUDProducts/Vista/menu.html");
+        if($this->login($usuario)){
+            session_start();
+            $usuario->setId($this->obtenerIdUsuario($usuario));
+            $_SESSION["usuario"]=$usuario->getId();
+            header("Location: http://localhost/CRUDProducts/Vista/menu.php?rol=".$usuario->getRol());
         }
     }
     
@@ -20,4 +23,9 @@ class ControladorUsuario {
         
         return $this->modeloUsuario->login($usuario);
     }
+    
+    public function obtenerIdUsuario(Usuario $usuario):int{
+        return $this->modeloUsuario->obtenerIdUsuario($usuario);
+    }
+    
 }
